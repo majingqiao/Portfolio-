@@ -420,7 +420,7 @@ main,
   margin: 0;
   display: grid;
   gap: 1.25rem;
-  padding: 1.5rem 0;
+  padding: 1.75rem 1.25rem 1.75rem 1.35rem;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   background: linear-gradient(90deg, rgba(44, 90, 74, 0.04), transparent 70%);
@@ -847,17 +847,20 @@ a.link-row:hover .link-arrow {
 
 .overseas-ins,
 .overseas-yt {
-  max-width: none;
+  max-width: 68rem; /* same container width as .xhs-row */
   width: 100%;
 }
 
 .ins-ref-grid {
+  /* Match Xiaohongshu phone size: one xhs board = half row, 2 phones per board */
+  --ref-board: calc((100% - clamp(1.25rem, 3vw, 2.25rem)) / 2);
+  --ref-phone: calc((var(--ref-board) - 0.55rem) / 2);
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 0.45rem;
-  align-items: start;
-  width: 100%;
-  max-width: none;
+  grid-template-columns: repeat(3, minmax(0, var(--ref-phone)));
+  gap: 0.55rem;
+  align-items: stretch;
+  width: max-content;
+  max-width: 100%;
 }
 
 .ins-ref-grid .media-shot-phone {
@@ -865,29 +868,6 @@ a.link-row:hover .link-arrow {
   width: 100%;
   transform: none;
   margin-top: 0;
-}
-
-.ins-ref-grid .phone-a {
-  transform: rotate(-0.8deg);
-}
-
-.ins-ref-grid .phone-b {
-  transform: rotate(0.6deg);
-  margin-top: 0.35rem;
-}
-
-.ins-ref-grid .phone-c {
-  transform: rotate(-0.4deg);
-}
-
-.ins-ref-grid .still-a {
-  transform: rotate(0.9deg);
-  margin-top: 0.25rem;
-}
-
-.ins-ref-grid .still-b {
-  transform: rotate(-0.7deg);
-  margin-top: 0.4rem;
 }
 
 .ins-ref-grid .still-a img,
@@ -905,17 +885,20 @@ a.link-row:hover .link-arrow {
 }
 
 .yt-ref-grid {
-  /* same 5-column track as Instagram; only 2 cells filled */
-  width: 100%;
-  max-width: none;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  --ref-board: calc((100% - clamp(1.25rem, 3vw, 2.25rem)) / 2);
+  --ref-phone: calc((var(--ref-board) - 0.55rem) / 2);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, var(--ref-phone)));
+  gap: 0.55rem;
+  width: max-content;
+  max-width: 100%;
 }
 
 .xhs-pair {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.55rem;
-  align-items: start;
+  align-items: stretch;
   max-width: none;
 }
 
@@ -923,6 +906,8 @@ a.link-row:hover .link-arrow {
   aspect-ratio: 471 / 1024;
   max-width: none;
   width: 100%;
+  transform: none;
+  margin-top: 0;
   box-shadow: 0 12px 28px rgba(28, 26, 23, 0.1);
 }
 
@@ -931,14 +916,13 @@ a.link-row:hover .link-arrow {
   object-position: center top;
 }
 
-.phone-a {
-  transform: rotate(-1.2deg);
-  justify-self: stretch;
-}
-
-.phone-b {
-  transform: rotate(1.4deg);
-  margin-top: 0.85rem;
+.phone-a,
+.phone-b,
+.phone-c,
+.still-a,
+.still-b {
+  transform: none;
+  margin-top: 0;
   justify-self: stretch;
 }
 
@@ -1071,14 +1055,23 @@ a.link-row:hover .link-arrow {
 
   .overseas-ins,
   .overseas-yt {
-    max-width: none;
+    max-width: 68rem;
   }
 
-  .ins-ref-grid,
+  .ins-ref-grid {
+    --ref-board: calc((100% - clamp(1.25rem, 3vw, 2.25rem)) / 2);
+    --ref-phone: calc((var(--ref-board) - 0.55rem) / 2);
+    grid-template-columns: repeat(3, minmax(0, var(--ref-phone)));
+    max-width: 100%;
+    gap: 0.55rem;
+  }
+
   .yt-ref-grid {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    max-width: none;
-    gap: 0.35rem;
+    --ref-board: calc((100% - clamp(1.25rem, 3vw, 2.25rem)) / 2);
+    --ref-phone: calc((var(--ref-board) - 0.55rem) / 2);
+    grid-template-columns: repeat(2, minmax(0, var(--ref-phone)));
+    max-width: 100%;
+    gap: 0.55rem;
   }
 
   .ins-ref-grid .phone-a,
