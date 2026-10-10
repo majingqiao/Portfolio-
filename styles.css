@@ -947,8 +947,12 @@ a.link-row:hover .link-arrow {
   grid-template-columns: 1fr auto;
 }
 
-.ai .feature-text h3 {
+.ai .feature-text h3:has(+ .ai-sub) {
   margin-bottom: 0;
+}
+
+.ai .feature-text h3 + .work-kicker {
+  margin-top: 0.85rem !important;
 }
 
 .muse-board {

@@ -73,6 +73,10 @@ const translations = {
     "ai.title": "AI内容创作",
     "ai.desc":
       "探索 AI 在短视频、产品广告与视觉叙事中的应用，从创意策划到视觉生成与后期制作完成内容创作。",
+    "ai.bag.title": "AI包袋种草视频",
+    "ai.bag.type": "产品广告",
+    "ai.bag.body":
+      "以包袋为创作主体，运用 AI 生成与后期剪辑，将产品视觉、材质细节与氛围表达相结合，探索 AI 在产品广告与社交媒体营销内容中的应用。",
     "ai.muse.sub": "Turn Ideas into Visual Stories",
     "ai.muse.type": "AI产品概念广告",
     "ai.muse.body":
@@ -168,6 +172,10 @@ const translations = {
     "ai.title": "AI Content Creation",
     "ai.desc":
       "Exploring AI in short video, product advertising, and visual storytelling, from creative planning to visual generation and post-production.",
+    "ai.bag.title": "AI Bag Seeding Video",
+    "ai.bag.type": "Product Ad",
+    "ai.bag.body":
+      "Using bags as the subject, combining AI generation and post-production editing to bring together product visuals, material details, and atmosphere, and exploring AI in product advertising and social media marketing.",
     "ai.muse.sub": "Turn Ideas into Visual Stories",
     "ai.muse.type": "AI Product Concept Ad",
     "ai.muse.body":
